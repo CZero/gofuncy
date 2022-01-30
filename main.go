@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gofuncy/lfs"
+
+	"github.com/CZero/gofuncy/lfs"
 )
 
 func main() {
