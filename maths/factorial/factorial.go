@@ -1,4 +1,4 @@
-package lfs
+package factorial
 
 // GetFactorial returns the factorials of a number. It returns 0 when 0 or smaller.
 func GetFactorial(input int) int {
