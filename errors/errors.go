@@ -1,5 +1,4 @@
-// lfs stands for Lib Functions Steph
-package lfs
+package errors
 
 // PanErr panics with an error, or does nothing
 func PanErr(err error) {
