@@ -23,3 +23,14 @@ func ProductSlice(inOrder []int) (sum int) {
 	}
 	return sum
 }
+
+// getLargestInSlice returns the largest number in a slice
+func getLargestInSlice(numbers []int) int {
+	largest := numbers[0]
+	for _, num := range numbers {
+		if num > largest {
+			largest = num
+		}
+	}
+	return largest
+}
