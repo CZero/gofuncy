@@ -4,15 +4,35 @@ import (
 	"math"
 )
 
+// getPrimeFactors finds the primefactors of a given number and returns them in a slice
+func getPrimeFactors(number int) []int {
+	// this function will get the prime	factors.
+	square := int(math.Round(math.Sqrt(float64(number))))
+	primes := getPrimesBelow(square)
+	var primefactors []int
+	for _, prime := range primes {
+		for {
+			if number == 0 {
+				return primefactors
+			}
+			if number%prime == 0 {
+				number = number / prime
+				primefactors = append(primefactors, prime)
+			} else {
+				break
+			}
+		}
+	}
+	return primefactors
+}
+
+// getPrimesBelow calculates all the primes below the given limt and returns them in a slice
 func getPrimesBelow(limit int) []int {
-	var primes []int // Type definition
-	switch {         // As numbers get higher, primes get more sparce. Here we try to initialize a matching slice. Not very exact, but focussed on less growing.
-	case limit < 1000:
-		primes = make([]int, int(math.Round(limit/2)) // Expanding (or growing) slices is very costly. Let's do it ourselves.
-	case limit < 1000000:
-		primes = make([]int, limit/4) // Expanding (or growing) slices is very costly. Let's do it ourselves.
-	default:
-		primes = make([]int, limit/5) // Expanding (or growing) slices is very costly. Let's do it ourselves.
+	var primes []int
+	if limit < 1000 {
+		primes = make([]int, limit/2) // Slices expanden is erg duur, zelf doen in dit geval dus!
+	} else {
+		primes = make([]int, limit/4) // Slices expanden is erg duur, zelf doen in dit geval dus!
 	}
 	primes[0] = 2
 	primes[1] = 3
