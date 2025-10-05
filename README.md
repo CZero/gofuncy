@@ -14,10 +14,11 @@ My library of functions I keep using / writing.
 | [Strings](#strings) | String manipulation | `SilentAtoi`, `ReverseString`, `RemoveSpaces` |
 | [Slices](#slices) | Slice operations | `SumSlice`, `ProductSlice` |
 | [Maths](#maths) | Mathematical functions | |
+| └ [Digits](#digits) | Digit range helpers | `FindMinMaxInxDigits` |
 | └ [Division](#division) | Divisor calculations | `Getdivisors` |
 | └ [Factorial](#factorial) | Factorial calculations | `GetFactorial` |
 | └ [Triangle Numbers](#triangle-numbers) | Triangle number calculations | `Gettrianglenumber` |
-| └ [Primes](#primes) | Prime number utilities | *(to be implemented)* |
+| └ [Primes](#primes) | Prime number utilities | Internal helpers |
 | [Matrix](#matrix) | String grid operations | Word search, matrix types |
 | [File Processes](#file-processes) | File I/O utilities | `ReadLines` |
 
@@ -127,6 +128,20 @@ func ProductSlice(inOrder []int) int
 
 Mathematical utility functions organized by topic.
 
+#### Digits
+
+```go
+import "github.com/CZero/gofuncy/maths/digits"
+```
+
+##### FindMinMaxInxDigits
+
+Returns the smallest and largest numbers with the requested number of digits.
+
+```go
+func FindMinMaxInxDigits(digits int) (min, max int)
+```
+
 #### Division
 
 ```go
@@ -175,7 +190,25 @@ func Gettrianglenumber(n int) int
 import "github.com/CZero/gofuncy/maths/primes"
 ```
 
-Prime number utilities (functions to be implemented).
+Prime number utilities currently exposing internal helpers for building new functionality.
+
+##### getPrimesBelow *(internal helper)*
+
+Calculates all prime numbers below a given limit.
+
+```go
+func getPrimesBelow(limit int) []int
+```
+
+##### getPrimeFactors *(internal helper)*
+
+Finds the prime factors of a number by iteratively dividing by primes.
+
+```go
+func getPrimeFactors(number int) []int
+```
+
+> These helpers are not yet exported; wrap them in your own functions or contribute an exported API if you need direct access from another module.
 
 ### Matrix
 
