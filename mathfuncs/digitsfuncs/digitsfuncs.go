@@ -1,4 +1,4 @@
-package digits
+package digitsfuncs
 
 import "math"
 

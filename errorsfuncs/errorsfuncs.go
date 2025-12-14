@@ -1,4 +1,4 @@
-package errors
+package errorsfuncs
 
 // PanErr panics with an error, or does nothing
 func PanErr(err error) {

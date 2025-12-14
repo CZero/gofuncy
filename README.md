@@ -20,7 +20,7 @@ My library of functions I keep using / writing.
 | └ [Triangle Numbers](#triangle-numbers) | Triangle number calculations | `Gettrianglenumber` |
 | └ [Primes](#primes) | Prime number utilities | Internal helpers |
 | [Matrix](#matrix) | String grid operations | Word search, matrix types |
-| [File Processes](#file-processes) | File I/O utilities | `ReadLines` |
+| [File Functions](#file-functions) | File I/O utilities | `ReadLines` |
 
 ## Installation
 
@@ -35,23 +35,23 @@ package main
 
 import (
     "fmt"
-    "github.com/CZero/gofuncy/strings"
-    "github.com/CZero/gofuncy/maths/factorial"
-    "github.com/CZero/gofuncy/slices"
+    "github.com/CZero/gofuncy/stringsfuncs"
+    "github.com/CZero/gofuncy/mathfuncs/factorialfuncs"
+    "github.com/CZero/gofuncy/slicesfuncs"
 )
 
 func main() {
     // String operations
-    reversed := strings.ReverseString("hello")
+    reversed := stringsfuncs.ReverseString("hello")
     fmt.Println(reversed) // "olleh"
 
     // Math operations
-    fact := factorial.GetFactorial(5)
+    fact := factorialfuncs.GetFactorial(5)
     fmt.Println(fact) // 120
 
     // Slice operations
     numbers := []int{1, 2, 3, 4, 5}
-    sum := slices.SumSlice(numbers)
+    sum := slicesfuncs.SumSlice(numbers)
     fmt.Println(sum) // 15
 }
 ```
@@ -61,7 +61,7 @@ func main() {
 ### Errors
 
 ```go
-import "github.com/CZero/gofuncy/errors"
+import "github.com/CZero/gofuncy/errorsfuncs"
 ```
 
 #### PanErr
@@ -75,7 +75,7 @@ func PanErr(err error)
 ### Strings
 
 ```go
-import "github.com/CZero/gofuncy/strings"
+import "github.com/CZero/gofuncy/stringsfuncs"
 ```
 
 #### SilentAtoi
@@ -105,7 +105,7 @@ func RemoveSpaces(input string) string
 ### Slices
 
 ```go
-import "github.com/CZero/gofuncy/slices"
+import "github.com/CZero/gofuncy/slicesfuncs"
 ```
 
 #### SumSlice
@@ -131,7 +131,7 @@ Mathematical utility functions organized by topic.
 #### Digits
 
 ```go
-import "github.com/CZero/gofuncy/maths/digits"
+import "github.com/CZero/gofuncy/mathfuncs/digitsfuncs"
 ```
 
 ##### FindMinMaxInxDigits
@@ -145,7 +145,7 @@ func FindMinMaxInxDigits(digits int) (min, max int)
 #### Division
 
 ```go
-import "github.com/CZero/gofuncy/maths/division"
+import "github.com/CZero/gofuncy/mathfuncs/divisionfuncs"
 ```
 
 ##### Getdivisors
@@ -159,7 +159,7 @@ func Getdivisors(i int) []int
 #### Factorial
 
 ```go
-import "github.com/CZero/gofuncy/maths/factorial"
+import "github.com/CZero/gofuncy/mathfuncs/factorialfuncs"
 ```
 
 ##### GetFactorial
@@ -173,7 +173,7 @@ func GetFactorial(input int) int
 #### Triangle Numbers
 
 ```go
-import "github.com/CZero/gofuncy/maths/trianglenumbers"
+import "github.com/CZero/gofuncy/mathfuncs/trianglenumbersfuncs"
 ```
 
 ##### Gettrianglenumber
@@ -187,7 +187,7 @@ func Gettrianglenumber(n int) int
 #### Primes
 
 ```go
-import "github.com/CZero/gofuncy/maths/primes"
+import "github.com/CZero/gofuncy/mathfuncs/primesfuncs"
 ```
 
 Prime number utilities currently exposing internal helpers for building new functionality.
@@ -213,7 +213,7 @@ func getPrimeFactors(number int) []int
 ### Matrix
 
 ```go
-import "github.com/CZero/gofuncy/matrix"
+import "github.com/CZero/gofuncy/matrixfuncs"
 ```
 
 Provides matrix operations for string grids, including word search functionality in all directions (horizontal, vertical, diagonal).
@@ -235,10 +235,10 @@ type StringsMatrix struct {
 }
 ```
 
-### File Processes
+### File Functions
 
 ```go
-import "github.com/CZero/gofuncy/fileprocesses"
+import "github.com/CZero/gofuncy/filefuncs"
 ```
 
 #### ReadLines

@@ -1,4 +1,4 @@
-package division
+package divisionfuncs
 
 import "math"
 

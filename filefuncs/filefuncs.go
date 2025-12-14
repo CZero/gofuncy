@@ -1,4 +1,4 @@
-package fileprocesses
+package filefuncs
 
 import (
 	"bufio"
